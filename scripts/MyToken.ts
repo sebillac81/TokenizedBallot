@@ -44,21 +44,6 @@ async function main(){
 
     await vote(tokenizedBallotContract,acc1, 1, 3);
     await vote(tokenizedBallotContract,acc2, 2, 5);
-    // await vote(tokenizedBallotContract,acc1, 0);
-
-    // const mintTx = await contract.connect(deployer).mint(acc1.address, MINT_VALUE);
-    // const mintTxReceipt = await mintTx.wait();
-
-    // console.log(`Minted ${ethers.utils.formatUnits(MINT_VALUE)} tokens to the address ${contract.address} at the block ${mintTxReceipt.blockNumber}\n`);
-
-    // const balanceBN = await contract.balanceOf(acc1.address);
-    // console.log(`Account ${acc1.address} has ${ethers.utils.formatUnits(balanceBN)} MyVoteToken\n`);
-
-    // const delegateTx = await contract.connect(acc1).delegate(acc1.address);
-    // await delegateTx.wait();
-
-    // const votes = await contract.getVotes(acc1.address);
-    // console.log(`Account ${acc1.address} has ${ethers.utils.formatUnits(votes)} voting powers after self delegating\n`);
 }
 async function vote(
     tokenizedBallotContract: TokenizedBallot,
