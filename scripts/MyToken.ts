@@ -12,8 +12,7 @@ async function main(){
     const myVotecontractFactory = new MyVoteToken__factory(deployer);
     const myVotecontract = await myVotecontractFactory.deploy();
     const deployVoteContractTxReceipt = await myVotecontract.deployTransaction.wait();
-    console.log(`The contract MyVoteToken was deployed at address ${myVotecontract.address} 
-                    at the block ${deployVoteContractTxReceipt.blockNumber} \n`);
+    console.log(`The contract MyVoteToken was deployed at address ${myVotecontract.address} at the block ${deployVoteContractTxReceipt.blockNumber} \n`);
 
     const proposals = process.argv.slice(2) as string[];
     console.log("Proposals to Ballot: ");
@@ -30,8 +29,7 @@ async function main(){
     );
 
     const deployTokenizedBallotTxReceipt = await tokenizedBallotContract.deployTransaction.wait();
-    console.log(`The contract TokenizedBallot was deployed at address ${tokenizedBallotContract.address} 
-    at the block ${deployTokenizedBallotTxReceipt.blockNumber} \n`);
+    console.log(`The contract TokenizedBallot was deployed at address ${tokenizedBallotContract.address} at the block ${deployTokenizedBallotTxReceipt.blockNumber} \n`);
 
     await mint(myVotecontract,acc1);
     await delegateVote(myVotecontract, acc1);
